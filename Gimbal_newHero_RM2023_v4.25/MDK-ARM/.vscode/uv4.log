@@ -1,0 +1,100 @@
+*** Using Compiler 'V5.06 update 3 (build 300)', folder: 'D:\Keil v5\ARM\ARMCC\Bin'
+Build target 'Gimbal_Hero_RM2023_v1.0'
+compiling BMI088driver.c...
+..\application\BMI088driver.c(69): warning:  #1294-D: Old-style function BMI088_accel_write_single_reg
+  void BMI088_accel_write_single_reg(reg,data) 
+..\application\BMI088driver.c(69): warning:  #1079-D: standard requires that parameter "reg" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_accel_write_single_reg(reg,data) 
+..\application\BMI088driver.c(69): warning:  #1079-D: standard requires that parameter "data" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_accel_write_single_reg(reg,data) 
+..\application\BMI088driver.c(80): warning:  #1294-D: Old-style function BMI088_accel_read_single_reg
+   void BMI088_accel_read_single_reg(reg,data)
+..\application\BMI088driver.c(80): warning:  #1079-D: standard requires that parameter "reg" be given a type by a subsequent declaration ("int" assumed)
+   void BMI088_accel_read_single_reg(reg,data)
+..\application\BMI088driver.c(80): warning:  #1079-D: standard requires that parameter "data" be given a type by a subsequent declaration ("int" assumed)
+   void BMI088_accel_read_single_reg(reg,data)
+..\application\BMI088driver.c(80): warning:  #550-D: parameter "data" was set but never used
+   void BMI088_accel_read_single_reg(reg,data)
+..\application\BMI088driver.c(94): warning:  #1294-D: Old-style function BMI088_accel_write_muli_reg
+  void BMI088_accel_write_muli_reg(reg,data,len)
+..\application\BMI088driver.c(94): warning:  #1079-D: standard requires that parameter "reg" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_accel_write_muli_reg(reg,data,len)
+..\application\BMI088driver.c(94): warning:  #1079-D: standard requires that parameter "data" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_accel_write_muli_reg(reg,data,len)
+..\application\BMI088driver.c(94): warning:  #1079-D: standard requires that parameter "len" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_accel_write_muli_reg(reg,data,len)
+..\application\BMI088driver.c(97): error:  #167: argument of type "int" is incompatible with parameter of type "uint8_t *"
+      BMI088_write_muli_reg(reg,data,len);//Ëø?Èá?Èö?ÈÅ?‰∏?Â∫?ËØ?Áî?Êå?Èí?Ôº?Ôº?Ôº?
+..\application\BMI088driver.c(106): warning:  #1294-D: Old-style function BMI088_accel_read_muli_reg
+  void BMI088_accel_read_muli_reg(reg,data,len)
+..\application\BMI088driver.c(106): warning:  #1079-D: standard requires that parameter "reg" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_accel_read_muli_reg(reg,data,len)
+..\application\BMI088driver.c(106): warning:  #1079-D: standard requires that parameter "data" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_accel_read_muli_reg(reg,data,len)
+..\application\BMI088driver.c(106): warning:  #1079-D: standard requires that parameter "len" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_accel_read_muli_reg(reg,data,len)
+..\application\BMI088driver.c(110): error:  #167: argument of type "int" is incompatible with parameter of type "uint8_t *"
+      BMI088_read_muli_reg(reg,data,len);
+..\application\BMI088driver.c(119): warning:  #1294-D: Old-style function BMI088_gyro_write_single_reg
+  void BMI088_gyro_write_single_reg(reg,data) 
+..\application\BMI088driver.c(119): warning:  #1079-D: standard requires that parameter "reg" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_gyro_write_single_reg(reg,data) 
+..\application\BMI088driver.c(119): warning:  #1079-D: standard requires that parameter "data" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_gyro_write_single_reg(reg,data) 
+..\application\BMI088driver.c(130): warning:  #1294-D: Old-style function BMI088_gyro_read_single_reg
+   void BMI088_gyro_read_single_reg(reg,data)
+..\application\BMI088driver.c(130): warning:  #1079-D: standard requires that parameter "reg" be given a type by a subsequent declaration ("int" assumed)
+   void BMI088_gyro_read_single_reg(reg,data)
+..\application\BMI088driver.c(130): warning:  #1079-D: standard requires that parameter "data" be given a type by a subsequent declaration ("int" assumed)
+   void BMI088_gyro_read_single_reg(reg,data)
+..\application\BMI088driver.c(133): error:  #167: argument of type "int *" is incompatible with parameter of type "uint8_t *"
+      BMI088_read_single_reg(reg,&data);
+..\application\BMI088driver.c(142): warning:  #1294-D: Old-style function BMI088_gyro_write_muli_reg
+  void BMI088_gyro_write_muli_reg(reg,data,len)
+..\application\BMI088driver.c(142): warning:  #1079-D: standard requires that parameter "reg" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_gyro_write_muli_reg(reg,data,len)
+..\application\BMI088driver.c(142): warning:  #1079-D: standard requires that parameter "data" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_gyro_write_muli_reg(reg,data,len)
+..\application\BMI088driver.c(142): warning:  #1079-D: standard requires that parameter "len" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_gyro_write_muli_reg(reg,data,len)
+..\application\BMI088driver.c(145): error:  #167: argument of type "int" is incompatible with parameter of type "uint8_t *"
+      BMI088_write_muli_reg(reg,data,len);//Ëø?Èá?Èö?ÈÅ?‰∏?Â∫?ËØ?Áî?Êå?Èí?Ôº?Ôº?Ôº?
+..\application\BMI088driver.c(154): warning:  #1294-D: Old-style function BMI088_gyro_read_muli_reg
+  void BMI088_gyro_read_muli_reg(reg,data,len)
+..\application\BMI088driver.c(154): warning:  #1079-D: standard requires that parameter "reg" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_gyro_read_muli_reg(reg,data,len)
+..\application\BMI088driver.c(154): warning:  #1079-D: standard requires that parameter "data" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_gyro_read_muli_reg(reg,data,len)
+..\application\BMI088driver.c(154): warning:  #1079-D: standard requires that parameter "len" be given a type by a subsequent declaration ("int" assumed)
+  void BMI088_gyro_read_muli_reg(reg,data,len)
+..\application\BMI088driver.c(157): error:  #167: argument of type "int" is incompatible with parameter of type "uint8_t *"
+      BMI088_read_muli_reg(reg,data,len);
+..\application\BMI088driver.c(182): error:  #65: expected a ";"
+  bool_t bmi088_accel_init(void)
+..\application\BMI088driver.c(226): warning:  #12-D: parsing restarts here after previous syntax error
+    return BMI088_NO_ERROR;//Â¶?Êû?ÈÉ?Ê≤?Ëø?Âõ?Èî?ËØ?ÂÄ?Â∞?Ëø?Âõ?Ê≤?Èî?ËØ?
+..\application\BMI088driver.c(227): error:  #169: expected a declaration
+  }
+..\application\BMI088driver.c(242): warning:  #12-D: parsing restarts here after previous syntax error
+  };
+..\application\BMI088driver.c(275): error:  #20: identifier "write_BMI088_gyro_reg_data_error" is undefined
+          BMI088_gyro_write_single_reg(write_BMI088_gyro_reg_data_error[write_reg_num][0], write_BMI088_gyro_reg_data_error[write_reg_num][1]);
+..\application\BMI088driver.c(300): warning:  #223-D: function "bmi088_accel_init" declared implicitly
+      error |= bmi088_accel_init();
+..\application\BMI088driver.c(321): warning:  #180-D: argument is incompatible with formal parameter
+    BMI088_accel_read_muli_reg(
+MI088_ACCEL_XOUT_L,buf,6);
+..\application\BMI088driver.c(332): warning:  #180-D: argument is incompatible with formal parameter
+    BMI088_gyro_read_muli_reg(
+MI088_GYRO_CHIP_ID, buf, 8);//ÈôÄËû?‰ª?‰ª?Á¨?‰∏Ä‰∏?ÂØ?Â≠?Âô?ÂºÄÂß?ËØ?Ôº?Ëø?ÁùÄIDÂï?Áö?‰∏ÄÂù?ËØ?Âá?Êù?Ôº?ÈÇ?Âä?ÈÄ?Â∫?ËÆ?Âπ?Âò?‰∏?‰ª?Â§?ËØ?Âë?Ôº?
+..\application\BMI088driver.c(346): warning:  #180-D: argument is incompatible with formal parameter
+    BMI088_accel_read_muli_reg(
+MI088_TEMP_M, buf, 2);
+..\application\BMI088driver.c(351): warning:  #1-D: last line of file ends without a newline
+  }
+..\application\BMI088driver.c(173): warning:  #177-D: variable "write_BMI088_accel_reg_data_error" was declared but never referenced
+  static uint8_t write_BMI088_accel_reg_data_error[BMI088_WRITE_ACCEL_REG_NUM][3]=
+..\application\BMI088driver.c: 37 warnings, 8 errors
+"Gimbal_Hero_RM2023_v1.0\Gimbal_Hero_RM2023_v1.0" - 8 Error(s), 37 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:01

@@ -1,0 +1,15 @@
+gimbal_hero_rm2023_v1.0\aim_motor.o: ..\Drivers_Peripheral\Drivers_Motor\aim_motor.c
+gimbal_hero_rm2023_v1.0\aim_motor.o: ..\Drivers_Peripheral\Drivers_Motor\aim_motor.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: ../supprot/struct_typedef.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: ..\Drivers_Peripheral\Drivers_Motor\motor_can.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: ../supprot/pid.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: ../Comm/remote_control.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: ../Tasks/shoot_task.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: ../algorithm/Include/arm_math.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: ../Drivers/CMSIS/Include/core_cm4.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdint.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: ../Drivers/CMSIS/Include/cmsis_version.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: D:\MDK5\ARM\ARMCC\Bin\..\include\string.h
+gimbal_hero_rm2023_v1.0\aim_motor.o: D:\MDK5\ARM\ARMCC\Bin\..\include\math.h
