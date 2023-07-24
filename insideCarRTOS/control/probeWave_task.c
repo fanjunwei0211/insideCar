@@ -5,7 +5,7 @@
 
 
 int16_t probe_speed = 0;     //内爬探头旋转速度   范围-16000~+16000
-char probe_move_flag = 0;    //内爬探头旋转开关   0-->关    1-->开
+char probe_move_flag = 0,probe_init_flag = 0;    //内爬探头旋转开关   0-->关    1-->开
 int32_t angle_probe_min = 0,
 				angle_probe_max = 0;    //内爬小车旋转探头的转动角度
 
@@ -49,6 +49,7 @@ void probe_position_init()
 			probe_speed  = 0;
 			angle_probe_max = moto_chassis[4].total_angle - 1000;
 			angle_probe_min = angle_probe_max - 19*8192/2 ;
+			probe_init_flag = 1;
 			break;
 		}
 		osDelay(1);

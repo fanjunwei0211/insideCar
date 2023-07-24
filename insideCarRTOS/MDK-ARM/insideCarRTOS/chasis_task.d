@@ -50,4 +50,5 @@ insidecarrtos\chasis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_p
 insidecarrtos\chasis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 insidecarrtos\chasis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 insidecarrtos\chasis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+insidecarrtos\chasis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 insidecarrtos\chasis_task.o: ../bsp/user_lib.h

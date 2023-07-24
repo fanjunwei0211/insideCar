@@ -5,18 +5,56 @@
 extern int16_t probe_speed;
 
 int16_t insideCar_speed;  //内爬小车速度设置变量   范围-16000~+16000
+int16_t speed_l = 0,speed_r = 0;
 first_order_filter_type_t motov_filter;
-PID_TypeDef motor_pid[5];  //3508电机pid结构体
+PID_TypeDef motor_pid[5];  //3508电机pid结构体   1-2前车  3-4后车  5探头
 //PID_TypeDef motor_pid_position;  //3508电机位置环pid结构体
 
-const fp32 motor_speed_pid_param[3] = {M3508_MOTOR_SPEED_PID_KP, M3508_MOTOR_SPEED_PID_KI, M3508_MOTOR_SPEED_PID_KD};
+
+
+
+void Chasis_task(void const * argument)
+{
+		//3508电机can初始化
+	motor_init();
+	insideCar_speed = 0;
+  for(;;)
+	{
+		osDelay(5);
+		
+		//一阶低通滤波器
+		first_order_filter_cali(&motov_filter,insideCar_speed);
+		//底盘电机速度设置
+		motor_pid[0].target = 48.0/65*motov_filter.out;
+		motor_pid[1].target = -48.0/65*motov_filter.out;
+		motor_pid[2].target = -motov_filter.out;
+		motor_pid[3].target = motov_filter.out;
+		
+		motor_pid[4].target = probe_speed;
+		limit(&speed_l,-4000,4000);
+		limit(&speed_r,-4000,4000);
+		TIM1->CCR2 = speed_l;
+		TIM1->CCR3 = speed_r;
+			
+		for(int i=0; i<5; i++)
+		{																							
+			motor_pid[i].f_cal_pid(&motor_pid[i],moto_chassis[i].speed_rpm);    //根据设定值进行PID计算。
+		}
+		set_moto_current_CAN1(MotoHead,   motor_pid[0].output,   //将PID的计算结果通过CAN发送到电机
+																			motor_pid[1].output,
+																			0,
+																			0);
+
+		set_moto_current_CAN2(MotoHead,   motor_pid[2].output,
+																			motor_pid[3].output,
+																			motor_pid[4].output,   //将PID的计算结果通过CAN发送到电机
+																			0);
+	}
+}
 
 void motor_init()
 {
-	//初始化3508电机PID 
-	my_can_filter_init_recv_all(&hcan1);
-  HAL_CAN_Start(&hcan1);
-  HAL_CAN_ActivateNotification(&hcan1,CAN_IT_RX_FIFO0_MSG_PENDING);
+	can_filter_init();
 	first_order_filter_init(&motov_filter,0.004,0.33333333f);
   for(int i=0; i<5; i++)
   {	
@@ -25,38 +63,11 @@ void motor_init()
   }
 }
 
-	
-
-
-void Chasis_task(void const * argument)
+void limit(int16_t *target, int16_t min, int16_t max)
 {
-		//3508电机can初始化
-	motor_init();
-	insideCar_speed = 1140;
-  for(;;)
-	{
-		osDelay(5);
-
-		first_order_filter_cali(&motov_filter,insideCar_speed);
-		motor_pid[0].target = 25.0/33*motov_filter.out;
-		motor_pid[1].target = -25.0/33*motov_filter.out;
-		motor_pid[2].target = motov_filter.out;
-		motor_pid[3].target = -motov_filter.out;
-		
-		motor_pid[4].target = probe_speed;
-			
-		for(int i=0; i<5; i++)
-		{																							
-			motor_pid[i].f_cal_pid(&motor_pid[i],moto_chassis[i].speed_rpm);    //根据设定值进行PID计算。
-		}
-		set_moto_current(&hcan1, MotoHead,  motor_pid[0].output,   //将PID的计算结果通过CAN发送到电机
-																				motor_pid[1].output,
-																				motor_pid[2].output,
-																				motor_pid[3].output);
-
-		set_moto_current(&hcan1, MotoTail,  motor_pid[4].output,   //将PID的计算结果通过CAN发送到电机
-																				0,
-																				0,
-																				0);
-	}
+	if(*target > max)
+		*target = max;
+	if(*target < min)
+		*target = min;
 }
+	

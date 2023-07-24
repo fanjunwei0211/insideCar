@@ -36,11 +36,11 @@ typedef enum
 {
 
 	CAN_2006Moto_ALL_ID = 0x200,
-	CAN_2006Moto1_ID = 0x201,
-	CAN_2006Moto2_ID = 0x202,
-	CAN_2006Moto3_ID = 0x203,
-	CAN_2006Moto4_ID = 0x204,
-	CAN_2006Moto5_ID = 0x205,
+	CAN_F2006Moto1_ID = 0x201,
+	CAN_F2006Moto2_ID = 0x202,
+	CAN_B2006Moto1_ID = 0x201,
+	CAN_B2006Moto2_ID = 0x202,
+	CAN_B2006Moto3_ID = 0x203,
 }CAN_Message_ID;
 
 #define MotoHead 0x200
@@ -69,10 +69,9 @@ typedef struct{
 extern moto_measure_t  moto_chassis[];
 
 
-void my_can_filter_init(CAN_HandleTypeDef* hcan);
-void my_can_filter_init_recv_all(CAN_HandleTypeDef* _hcan);
-void can_filter_recv_special(CAN_HandleTypeDef* hcan, uint8_t filter_number, uint16_t filtered_id);
+void can_filter_init(void);
 void get_moto_measure(moto_measure_t *ptr,uint8_t* Data);
 void can_receive_onetime(CAN_HandleTypeDef* _hcan, int time);
-void set_moto_current(CAN_HandleTypeDef* hcan, uint32_t mode, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4);
+void set_moto_current_CAN1(uint32_t mode, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4);
+void set_moto_current_CAN2(uint32_t mode, int16_t iq1, int16_t iq2, int16_t iq3, int16_t iq4);
 #endif

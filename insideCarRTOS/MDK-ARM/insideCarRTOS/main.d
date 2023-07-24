@@ -31,6 +31,7 @@ insidecarrtos\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 insidecarrtos\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 insidecarrtos\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 insidecarrtos\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+insidecarrtos\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 insidecarrtos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 insidecarrtos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 insidecarrtos\main.o: ../Core/Inc/FreeRTOSConfig.h
@@ -46,7 +47,9 @@ insidecarrtos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 insidecarrtos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 insidecarrtos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 insidecarrtos\main.o: ../Core/Inc/can.h
+insidecarrtos\main.o: ../Core/Inc/dma.h
 insidecarrtos\main.o: ../Core/Inc/tim.h
+insidecarrtos\main.o: ../Core/Inc/usart.h
 insidecarrtos\main.o: ../Core/Inc/gpio.h
 insidecarrtos\main.o: ../bsp/bsp_led.h
 insidecarrtos\main.o: ../bsp/struct_typedef.h
@@ -56,3 +59,5 @@ insidecarrtos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsi
 insidecarrtos\main.o: ../bsp/pid.h
 insidecarrtos\main.o: ../bsp/bsp_can.h
 insidecarrtos\main.o: ../bsp/user_lib.h
+insidecarrtos\main.o: ../control/uart_com.h
+insidecarrtos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

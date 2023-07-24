@@ -36,21 +36,21 @@ void led_flash(int cnt)
 		i=0;
 		if(t==0)
 		{
-			HAL_GPIO_WritePin(LED_R_GPIO_Port,LED_R_Pin,1);
-			HAL_GPIO_WritePin(LED_G_GPIO_Port,LED_G_Pin,0);
-			HAL_GPIO_WritePin(LED_B_GPIO_Port,LED_B_Pin,0);
+			HAL_GPIO_WritePin(LED_R_GPIO_Port,LED_R_Pin,GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_G_GPIO_Port,LED_G_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_B_GPIO_Port,LED_B_Pin,GPIO_PIN_RESET);
 		}			
 		else if(t==1)
 		{
-			HAL_GPIO_WritePin(LED_R_GPIO_Port,LED_R_Pin,0);
-			HAL_GPIO_WritePin(LED_G_GPIO_Port,LED_G_Pin,1);
-			HAL_GPIO_WritePin(LED_B_GPIO_Port,LED_B_Pin,0);
+			HAL_GPIO_WritePin(LED_R_GPIO_Port,LED_R_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_G_GPIO_Port,LED_G_Pin,GPIO_PIN_SET);
+			HAL_GPIO_WritePin(LED_B_GPIO_Port,LED_B_Pin,GPIO_PIN_RESET);
 		}
 		else
 		{
-			HAL_GPIO_WritePin(LED_R_GPIO_Port,LED_R_Pin,0);
-			HAL_GPIO_WritePin(LED_G_GPIO_Port,LED_G_Pin,0);
-			HAL_GPIO_WritePin(LED_B_GPIO_Port,LED_B_Pin,1);
+			HAL_GPIO_WritePin(LED_R_GPIO_Port,LED_R_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_G_GPIO_Port,LED_G_Pin,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(LED_B_GPIO_Port,LED_B_Pin,GPIO_PIN_SET);
 		}
 		t++;
 		if(t>2)

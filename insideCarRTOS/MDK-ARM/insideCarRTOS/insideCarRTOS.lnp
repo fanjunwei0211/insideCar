@@ -4,7 +4,9 @@
 "insidecarrtos\gpio.o"
 "insidecarrtos\freertos.o"
 "insidecarrtos\can.o"
+"insidecarrtos\dma.o"
 "insidecarrtos\tim.o"
+"insidecarrtos\usart.o"
 "insidecarrtos\stm32f4xx_it.o"
 "insidecarrtos\stm32f4xx_hal_msp.o"
 "insidecarrtos\stm32f4xx_hal_timebase_tim.o"
@@ -24,6 +26,7 @@
 "insidecarrtos\stm32f4xx_hal_exti.o"
 "insidecarrtos\stm32f4xx_hal_tim.o"
 "insidecarrtos\stm32f4xx_hal_tim_ex.o"
+"insidecarrtos\stm32f4xx_hal_uart.o"
 "insidecarrtos\system_stm32f4xx.o"
 "insidecarrtos\croutine.o"
 "insidecarrtos\event_groups.o"
@@ -43,6 +46,8 @@
 "insidecarrtos\user_lib.o"
 "insidecarrtos\probewave_task.o"
 "insidecarrtos\chasis_task.o"
+"insidecarrtos\uart_com.o"
+"insidecarrtos\move_task.o"
 --strict --scatter "insideCarRTOS\insideCarRTOS.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

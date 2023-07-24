@@ -50,6 +50,7 @@
 osThreadId defaultTaskHandle;
 osThreadId chasis_taskHandle;
 osThreadId probeWave_taskHandle;
+osThreadId move_taskHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -59,6 +60,7 @@ osThreadId probeWave_taskHandle;
 void StartDefaultTask(void const * argument);
 void Chasis_task(void const * argument);
 void ProbeWave_task(void const * argument);
+void Move_task(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -116,6 +118,10 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of probeWave_task */
   osThreadDef(probeWave_task, ProbeWave_task, osPriorityBelowNormal, 0, 128);
   probeWave_taskHandle = osThreadCreate(osThread(probeWave_task), NULL);
+
+  /* definition and creation of move_task */
+  osThreadDef(move_task, Move_task, osPriorityIdle, 0, 128);
+  move_taskHandle = osThreadCreate(osThread(move_task), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -177,6 +183,24 @@ __weak void ProbeWave_task(void const * argument)
     osDelay(1);
   }
   /* USER CODE END ProbeWave_task */
+}
+
+/* USER CODE BEGIN Header_Move_task */
+/**
+* @brief Function implementing the move_task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Move_task */
+__weak void Move_task(void const * argument)
+{
+  /* USER CODE BEGIN Move_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Move_task */
 }
 
 /* Private application code --------------------------------------------------*/
