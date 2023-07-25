@@ -117,6 +117,7 @@ static float pid_calculate(PID_TypeDef *pid, float measure) //, int16_t target)
 	else
 	{
 		pid->iout = 0;
+		pid->output = 0;
 	}
 
   return pid->output;

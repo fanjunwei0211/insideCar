@@ -13,30 +13,34 @@ void Move_task(void const * argument)
 	{
 		osDelay(1);
 	}
-	while(start_flag == 0){osDelay(1);}
-	while(forward_cnt<4)
-	{
-		insideCar_speed = 500;
-		osDelay(4000);
-		insideCar_speed = 0;
-		probe_move_flag = 1;
-		osDelay(4000);
-		probe_move_flag = 0;
-		forward_cnt++;
-	}
-	while(forward_cnt>0)
-	{
-		insideCar_speed = -500;
-		osDelay(4000);
-		insideCar_speed = 0;
-		probe_move_flag = 1;
-		osDelay(4000);
-		probe_move_flag = 0;
-		forward_cnt--;
-	}
+//	while(start_flag == 0){osDelay(1);}//等待串口启动信号
+//	while(forward_cnt<4)
+//	{
+//		insideCar_speed = 500;
+//		osDelay(4000);
+//		insideCar_speed = 0;
+//		probe_move_flag = 1;
+//		osDelay(4000);
+//		probe_move_flag = 0;
+//		forward_cnt++;
+//	}
+//	while(forward_cnt>0)
+//	{
+//		insideCar_speed = -500;
+//		osDelay(4000);
+//		insideCar_speed = 0;
+//		probe_move_flag = 1;
+//		osDelay(4000);
+//		probe_move_flag = 0;
+//		forward_cnt--;
+//	}
+
+	distance_target = 300;
+	osDelay(4000);
+
   for(;;)
 	{
-		
+		osDelay(1);
 			
 	}
 }

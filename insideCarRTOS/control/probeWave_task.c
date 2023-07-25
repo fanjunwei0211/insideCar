@@ -4,6 +4,8 @@
 #include "chasis_task.h"
 
 
+
+
 int16_t probe_speed = 0;     //内爬探头旋转速度   范围-16000~+16000
 char probe_move_flag = 0,probe_init_flag = 0;    //内爬探头旋转开关   0-->关    1-->开
 int32_t angle_probe_min = 0,
@@ -40,8 +42,8 @@ void ProbeWave_task(void const * argument)
 
 void probe_position_init()
 {
-	probe_speed = 200;
-	osDelay(200);
+	probe_speed = 150;
+	osDelay(20);
 	while(1)
 	{
 		if(moto_chassis[4].speed_rpm <= probe_speed/5)
@@ -50,6 +52,21 @@ void probe_position_init()
 			angle_probe_max = moto_chassis[4].total_angle - 1000;
 			angle_probe_min = angle_probe_max - 19*8192/2 ;
 			probe_init_flag = 1;
+			break;
+		}
+		osDelay(1);
+	}
+}
+
+void probe_position_reset()
+{
+	probe_speed = 150;
+	osDelay(20);
+	while(1)
+	{
+		if(moto_chassis[4].total_angle >= angle_probe_max)
+		{
+			probe_speed  = 0;
 			break;
 		}
 		osDelay(1);

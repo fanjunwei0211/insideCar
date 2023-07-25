@@ -6,9 +6,12 @@
 #include "bsp_can.h"
 #include "user_lib.h"
 
+#define PI 3.1415926
+
 extern int16_t insideCar_speed;
 extern first_order_filter_type_t motov_filter;
 extern PID_TypeDef motor_pid[]; 
+extern double distance,distance_target; 
 //extern PID_TypeDef motor_pid_position; 
 //底盘3508最大can发送电流值
 #define MAX_MOTOR_CAN_CURRENT 16000.0f

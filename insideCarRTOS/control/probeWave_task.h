@@ -5,5 +5,6 @@
 
 
 void probe_position_init(void);
+void probe_position_reset(void);
 
 #endif

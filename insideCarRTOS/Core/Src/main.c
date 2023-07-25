@@ -118,7 +118,7 @@ int main(void)
 		buzzer_on(0, 10000);HAL_Delay(100);
 		buzzer_off();HAL_Delay(100);
 	}
-//	while(keyState() == 0){};
+	while(keyState() == 0){};
 	
   /* USER CODE END 2 */
 
